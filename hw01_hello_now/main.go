@@ -1,5 +1,18 @@
 package main
 
+import (
+	"fmt"
+	"github.com/beevik/ntp"
+	"log"
+	"time"
+)
+
 func main() {
-	// Place your code here
+	start := time.Now()
+	exactTime, err := ntp.Time("0.beevik-ntp.pool.ntp.org")
+	if err != nil {
+		log.Fatalf("%s", err)
+	}
+	fmt.Println("current time: " + start.Round(0).String())
+	fmt.Println("exact time: " + exactTime.Round(0).String())
 }
