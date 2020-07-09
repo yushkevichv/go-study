@@ -1,4 +1,4 @@
-module github.com/yushkevichv/go-study/hw01_hello_now
+module github.com/yushkevichv/go-study/tree/master/hw01_hello_now
 
 go 1.14
 
