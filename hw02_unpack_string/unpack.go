@@ -7,11 +7,14 @@ import (
 	"unicode"
 )
 
+//ErrInvalidString for return.
 var ErrInvalidString = errors.New("invalid string")
 
+//Unpack func for transform strings.
 func Unpack(str string) (string, error) {
 	var tmp = rune('0')
 	var s strings.Builder
+
 	for _, runeValue := range str {
 		if unicode.IsDigit(runeValue) && unicode.IsDigit(tmp) {
 			return "", ErrInvalidString
