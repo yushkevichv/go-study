@@ -36,7 +36,6 @@ func Unpack(str string) (string, error) {
 			continue
 		}
 	}
-
 	if tmp != '0' {
 		s.WriteRune(tmp)
 	}
