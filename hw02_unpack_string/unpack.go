@@ -13,7 +13,6 @@ func Unpack(str string) (string, error) {
 	var tmp = rune('0')
 	var s strings.Builder
 	for _, runeValue := range str {
-
 		if unicode.IsDigit(runeValue) && unicode.IsDigit(tmp) {
 			return "", ErrInvalidString
 		}
@@ -34,11 +33,8 @@ func Unpack(str string) (string, error) {
 			continue
 		}
 	}
-	if int(tmp-'0') == 0 {
-		return s.String(), nil
-	} else if unicode.IsDigit(tmp) {
-		return "", ErrInvalidString
-	} else {
+
+	if tmp != '0' {
 		s.WriteRune(tmp)
 	}
 
